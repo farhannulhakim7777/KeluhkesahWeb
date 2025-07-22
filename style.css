@@ -1,0 +1,279 @@
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* lapisan gelap semi-transparan */
+    z-index: -1;
+}
+
+
+/* BODY - jadi flex container */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  background-image: url('/img/ayam.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* CONTAINER - kotaknya */
+.container {
+  background-color: rgba(0, 0, 0, 0.6); /* semi transparan biar kontras */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  max-width: 700px;
+  width: 90%;
+  color: #fff;
+}
+
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    height: 55px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* FORM */
+.form-section {
+    margin-top: 20px;
+}
+
+#keluhanInput {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* GARIS PEMISAH */
+.separator {
+    border: none;
+    height: 1px;
+    background-color: #444;
+    margin: 30px 0;
+}
+
+/* KELUHAN LIST */
+.keluhan-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #ddd;
+}
+
+.keluhan-list .keluhan-item {
+    background-color: #292929;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #007bff;
+    border-radius: 8px;
+}
+
+.keluhan-item .tanggal {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 8px;
+    text-align: right;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+}
+
+.hapus-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.hapus-btn:hover {
+  background-color: #c9302c;
+}
+
+
+
+/* Atur keseluruhan halaman agar footer tetap di bawah */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Konten utama agar ngisi sisa tinggi halaman */
+.container {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(20, 20, 20, 0.8);
+  border-radius: 12px;
+}
+
+/* Footer tetap di bawah */
+.footer {
+  width: 100%;
+  background-color: #111;
+  color: #ccc;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid #444;
+}
+
+.footer-container p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+ 
+
+/* ======================= */
+/* === RESPONSIVE CSS ==== */
+/* ======================= */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 28px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  #keluhanInput {
+    font-size: 16px;
+  }
+
+  .keluhan-item {
+    font-size: 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  textarea {
+    font-size: 14px;
+  }
+
+  .keluhan-item {
+    font-size: 14px;
+  }
+
+  .footer-container p {
+    font-size: 12px;
+  }
+}
